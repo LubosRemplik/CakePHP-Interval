@@ -13,9 +13,6 @@ class Interval
      */
     public function __construct($options = [])
     {
-        $this->options = array_merge(
-            $this->options,
-            $options
-        );
+        $this->options = $options + $this->options;
     }
 }
