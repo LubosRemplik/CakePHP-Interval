@@ -24,6 +24,14 @@ bin/cake plugin load Interval
 
 ## Usage
 
+In human readable string, following can be used
+
+ w = week  
+ d = day  
+ h = hour  
+ m = minute  
+ s = second  
+
 ```php
 $Interval = new \Interval\Interval\Interval();
 
