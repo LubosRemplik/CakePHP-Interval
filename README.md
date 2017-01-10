@@ -25,13 +25,24 @@ bin/cake plugin load Interval
 ## Usage
 
 ```php
-$Interval = new \Interval\Interval();
+$Interval = new \Interval\Interval\Interval();
 
 // output 2w 6h
 echo $Interval->toHuman((2 * 5 * 8 + 6) * 3600);
 
 // output 36000
 echo $Interval->toSeconds('1d 2h');
+```
+
+You can use `./src/Traits/IntervalTrait.php` or cakephp component / helper.
+
+Helper example
+```php
+// in AppView
+$this->loadHelper('Interval', ['className' => '\Interval\View\Helper\IntervalHelper']);
+
+// in Template, output 2w 6h
+<?= $this->Interval->toHuman((2 * 5 * 8 + 6) * 3600) ?>
 ```
 
 See ./tests/TestCase/Interval/IntervalTest.php for more examples
