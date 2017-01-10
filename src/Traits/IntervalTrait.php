@@ -29,7 +29,7 @@ trait IntervalTrait
      */
     public function toHuman($time, $options = [])
     {
-        $options = $options + $this->options;
+        $options += $this->options;
 
         $interval = [];
 
@@ -86,7 +86,7 @@ trait IntervalTrait
      */
     public function toSeconds($interval, $options = [])
     {
-        $options = $options + $this->options;
+        $options += $this->options;
 
         $seconds = 0;
         $timeParts = [
