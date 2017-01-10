@@ -2,6 +2,15 @@
     "name": "lubos/cakephp-interval",
     "description": "Interval plugin for CakePHP",
     "type": "cakephp-plugin",
+    "keywords": ["cakephp", "interval", "plugin"],
+    "homepage": "https://github.com/LubosRemplik/CakePHP-Interval",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lubos Remplik",
+            "homepage": "http://lubos.me"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "cakephp/cakephp": ">=3.3.2 <4.0.0"
