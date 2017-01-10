@@ -19,20 +19,6 @@ trait IntervalTrait
     ];
 
     /**
-     * Method: __construct
-     *
-     * @param array $options See options property
-     * @return void
-     */
-    public function __construct($options = [])
-    {
-        $this->options = array_merge(
-            $this->options,
-            $options
-        );
-    }
-
-    /**
      * toHuman method
      *
      * Reads seconds and convert them to human readable string
@@ -77,6 +63,10 @@ trait IntervalTrait
         $seconds = floor($time);
         if ($seconds > 0) {
             $interval[] = "{$seconds}s";
+        }
+
+        if (empty($interval)) {
+            return '0h';
         }
 
         return implode(' ', $interval);

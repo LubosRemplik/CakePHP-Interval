@@ -48,6 +48,11 @@ class IntervalTest extends TestCase
         $expected = '1w 4d 6h 30m 40s';
         $actual = $this->Interval->toHuman(1 * 5 * 8 * 3600 + 4 * 8 * 3600 + 6 * 3600 + 30 * 60 + 40);
         $this->assertEquals($expected, $actual);
+
+        // test 0 seconds
+        $expected = '0h';
+        $actual = $this->Interval->toHuman(0);
+        $this->assertEquals($expected, $actual);
     }
 
     public function testToHumanWithOptions()
