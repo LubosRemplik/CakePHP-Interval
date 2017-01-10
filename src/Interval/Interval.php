@@ -7,6 +7,10 @@ class Interval
     /**
      * Attribute: options
      *
+     * Options
+     * weekDays - number of days per week, default 5
+     * dayHours - number of hours per day, default 8
+     *
      * @var array
      */
     protected $options = [
@@ -17,7 +21,7 @@ class Interval
     /**
      * Method: __construct
      *
-     * @param array $options
+     * @param array $options See options property
      * @return void
      */
     public function __construct($options = [])
@@ -34,7 +38,7 @@ class Interval
      * Reads seconds and convert them to human readable string
      *
      * @param int $time Time in seconds
-     * @param array $options
+     * @param array $options See options property
      * @return string $interval
      */
     public function toHuman($time, $options = [])
@@ -90,7 +94,7 @@ class Interval
      * Interval timeParts are separated by space
      *
      * @param string $interval Human interval string
-     * @param array $options
+     * @param array $options See options property
      * @return int $seconds
      */
     public function toSeconds($interval, $options = [])
@@ -121,6 +125,7 @@ class Interval
                 }
             }
         }
+
         return $seconds;
     }
 }
