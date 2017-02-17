@@ -107,6 +107,10 @@ class IntervalTest extends TestCase
         $actual = $this->Interval->toSeconds('-3h -30m');
         $this->assertEquals($expected, $actual);
 
+        $expected = 3.5 * 3600; // 3.5 hours
+        $actual = $this->Interval->toSeconds('3.5h');
+        $this->assertEquals($expected, $actual);
+
         $expected = 2 * 5 * 8 * 3600 + 3 * 8 * 3600 + 5 * 3600 + 30 * 60 + 20;
         $actual = $this->Interval->toSeconds('2w 3d 5h 30m 20s');
         $this->assertEquals($expected, $actual);
